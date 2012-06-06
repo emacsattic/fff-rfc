@@ -5,7 +5,7 @@
 ;; Author: Noah Friedman <friedman@splode.com>
 ;; Maintainer: friedman@splode.com
 
-;; $Id: fff-rfc.el,v 1.3 2001/09/20 22:59:11 friedman Exp $
+;; $Id: fff-rfc.el,v 1.4 2011/11/06 18:50:17 friedman Exp $
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -18,9 +18,7 @@
 ;; GNU General Public License for more details.
 ;;
 ;; You should have received a copy of the GNU General Public License
-;; along with this program; if not, you can either send email to this
-;; program's maintainer or write to: The Free Software Foundation,
-;; Inc.; 59 Temple Place, Suite 330; Boston, MA 02111-1307, USA.
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 ;;; Code:
@@ -61,7 +59,8 @@ The file may have one of the extensions enumerated in
                 (setq num (substring num (match-end 0))))
            (and (string-match "^[0-9.+---]+$" num)
                 (setq num (string-to-int num))))))
-  (let* ((names (fff-suffix (cond ((numberp num)
+  (let* ((vc-handled-backends nil)
+         (names (fff-suffix (cond ((numberp num)
                                    (list (format "rfc%d.txt" num)
                                          (format "rfc%.4d.txt" num)))
                                   ((member num '("index"))
