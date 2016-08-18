@@ -5,7 +5,7 @@
 ;; Author: Noah Friedman <friedman@splode.com>
 ;; Maintainer: friedman@splode.com
 
-;; $Id: fff-rfc.el,v 1.4 2011/11/06 18:50:17 friedman Exp $
+;; $Id: fff-rfc.el,v 1.5 2016/07/15 00:49:25 friedman Exp $
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,17 +25,17 @@
 
 (require 'fff)
 
+;; See http://www.rfc-editor.org/retrieve/ for notes on retrieving
+;; and updating a local mirror.
 (defvar fff-rfc-path
-  '("/com/doc/rfc"
-    "/opt/local/doc/rfc"
-    "/usr/local/doc/rfc"
+  '("/com/doc/standards/rfc"
     "/ftp@ftp.rfc-editor.org:/in-notes/"
     ;;"/ftp@ftp.isi.edu:/in-notes/"
     "/ftp@ftp.ietf.org:/rfc/")
   "*Path in which to search for RFCs")
 
 (defvar fff-rfc-extensions
-  '("" ".gz" ".bz2" ".Z")
+  '("" ".xz" ".bz2" ".gz" ".Z")
   "*Possible filename extensions on RFC files.
 A transparent decompressor library such as `crypt++' or `jka-compr'
 may be required if the found file is compressed.")
