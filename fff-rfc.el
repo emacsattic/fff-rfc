@@ -5,7 +5,7 @@
 ;; Author: Noah Friedman <friedman@splode.com>
 ;; Maintainer: friedman@splode.com
 
-;; $Id: fff-rfc.el,v 1.5 2016/07/15 00:49:25 friedman Exp $
+;; $Id: fff-rfc.el,v 1.6 2016/11/24 20:24:52 friedman Exp $
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ The file may have one of the extensions enumerated in
            (and (string-match "^rfc-?" num)
                 (setq num (substring num (match-end 0))))
            (and (string-match "^[0-9.+---]+$" num)
-                (setq num (string-to-int num))))))
+                (setq num (string-to-number num))))))
   (let* ((vc-handled-backends nil)
          (names (fff-suffix (cond ((numberp num)
                                    (list (format "rfc%d.txt" num)
